@@ -5,9 +5,12 @@ import pfp from "./assets/img/pfp.png";
 import project1 from "./assets/img/Project1.png";
 import project2 from "./assets/img/Project2.png";
 import project3 from "./assets/img/Project3.png";
+import project0 from "./assets/img/Project0.png";
 import docker from "./assets/img/docker.png";
 import firebase from "./assets/img/firebase.png";
 import laravel from "./assets/img/laravel.png";
+import react from "./assets/img/react.png";
+import php from "./assets/img/php.png";
 import Projects from "./components/Projects";
 import Arrow from "./assets/img/arrow.png";
 import Modal from "react-modal";
@@ -28,14 +31,13 @@ function App() {
   useEffect(() => {
     Modal.setAppElement(".Desktop");
   }, []);
-  // Sample project data
   const projects = [
     {
       id: 1,
       title: "Flutter App",
       description:
         "Ontdek mijn nieuwste Flutter-app, naadloos geïntegreerd met een krachtige PHP Laravel REST API. Van strak design tot real-time data-interactie, deze app biedt een vloeiende gebruikerservaring. Flutter zorgt voor responsiviteit, terwijl de Laravel API efficiënte gegevensuitwisseling mogelijk maakt. Ervaar de toekomst van mobiliteit in deze innovatieve creatie!",
-      img: project1,
+      img: project0,
     },
     {
       id: 2,
@@ -46,6 +48,13 @@ function App() {
     },
     {
       id: 3,
+      title: "New Era of Login",
+      description:
+        "IIn mijn recent ontwikkelde project, genaamd “New Era of Login,” heb ik een geavanceerde login-pagina gebouwd met Firebase Authentication en Storage. Deze moderne inlogfunctionaliteit biedt gebruikers de keuze om veilig in te loggen met hun e-mail en wachtwoord, of moeiteloos via hun Google-account. Hiermee creëer ik een flexibele en beveiligde gebruikerservaring in een nieuwe fase van inlogmethoden. Bovendien is de frontend van het project ontwikkeld met behulp van React, waardoor de gebruikersinterface responsief en dynamisch is.",
+      img: project1,
+    },
+    {
+      id: 4,
       title: "3d model viewer",
       description:
         "In mijn recente project heb ik three.js gebruikt voor het renderen van 3D-modellen en een server opgezet met vue.js in combinatie met vanilla JavaScript. De kracht van three. js maakte het mogelijk gedetailleerde 3D-modellen vloeiend te renderen, terwijl de serverarchitectuur met vue.js een solide backend bood voor effectieve communicatie tussen de gebruikersinterface en de 3D-modellen",
@@ -91,8 +100,8 @@ function App() {
           </div>
           <div className="startText">
             <h2>
-              Greetings and welcome! Your presence on my page, brings
-              <mark>me joy as I share a glimpse of my world with you.</mark>
+              Greetings and welcome! Your presence on my page, brings{" "}
+              <mark> me joy as I share a glimpse of my world with you.</mark>
             </h2>
             <button className="whiteButton">Contact</button>
           </div>
@@ -100,9 +109,11 @@ function App() {
             <h3>Trusted programming languages</h3>
             <div className="logos">
               <div>
+                <img alt="php" src={php}></img>
                 <img alt="docker" src={docker}></img>
-                <img alt="docker" src={firebase}></img>
-                <img alt="docker" src={laravel}></img>
+                <img alt="firebase" src={firebase}></img>
+                <img alt="laravel" src={laravel}></img>
+                <img alt="react" src={react}></img>
               </div>
             </div>
           </div>
