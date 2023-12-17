@@ -258,3 +258,32 @@ aside {
 .project {
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 34px;
+  }
+  .aside h2 {
+    font-size: 24px;
+  }
+  .aside p {
+    font-size: 12px;
+  }
+  .startText {
+    font-size: 12px;
+  }
+  .aside .header {
+    grid-template-columns: 1fr;
+  }
+  .quote img {
+    margin-bottom: 0px;
+  }
+  .quote {
+    margin-bottom: 50px;
+  }
+  .whiteButton,
+  .blackButton {
+    width: 162px;
+    height: 44px;
+    font-size: 12px;
+  }
+}

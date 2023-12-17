@@ -11,10 +11,12 @@ const Projects = ({ isOpen, closeModal, projectDetails }) => {
       transform: "translate(-50%, -50%)",
       padding: "20px",
       borderRadius: "8px",
-      backgroundColor: "#1c1c1c",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-      color: "white",
-      width: "48%",
+      backgroundColor: "#000",
+      color: "#fff",
+      width: "90%",
+      maxWidth: "400px",
+      margin: "0 auto",
     },
     overlay: {
       backgroundColor: "rgba(0, 0, 0, 0.5)",
@@ -28,15 +30,7 @@ const Projects = ({ isOpen, closeModal, projectDetails }) => {
       contentLabel="Project Detail Modal"
       style={modalStyles}
     >
-      <div
-        style={{
-          textAlign: "center",
-          alignContent: "center",
-          display: "grid",
-          alignItems: "center",
-          justifyItems: "center",
-        }}
-      >
+      <div style={{ textAlign: "center" }}>
         <h2 style={{ marginBottom: "20px" }}>Project Details</h2>
         {projectDetails && (
           <>
@@ -52,7 +46,8 @@ const Projects = ({ isOpen, closeModal, projectDetails }) => {
               onClick={closeModal}
               style={{
                 padding: "10px 20px",
-                backgroundColor: "white",
+                backgroundColor: "#3498db",
+                color: "#fff",
                 border: "none",
                 borderRadius: "4px",
                 cursor: "pointer",

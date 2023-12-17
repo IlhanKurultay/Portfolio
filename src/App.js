@@ -30,7 +30,28 @@ function App() {
   };
   useEffect(() => {
     Modal.setAppElement(".Desktop");
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "c") {
+        openEmailClient();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
   }, []);
+  const openEmailClient = () => {
+    const email = "ilhankurultay@student.ehb.be";
+    const subject = "Regarding Your Portfolio";
+    const body = "Hi, I would like to get in touch with you.";
+
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+  };
   const projects = [
     {
       id: 1,
@@ -38,6 +59,7 @@ function App() {
       description:
         "Ontdek mijn nieuwste Flutter-app, naadloos geïntegreerd met een krachtige PHP Laravel REST API. Van strak design tot real-time data-interactie, deze app biedt een vloeiende gebruikerservaring. Flutter zorgt voor responsiviteit, terwijl de Laravel API efficiënte gegevensuitwisseling mogelijk maakt. Ervaar de toekomst van mobiliteit in deze innovatieve creatie!",
       img: project0,
+      technologie: ["Flutter", "PHP"],
     },
     {
       id: 2,
@@ -45,6 +67,7 @@ function App() {
       description:
         "In mijn recente project, genaamd “Prototype Movement Tracking,” heb ik met succes YoloV5 toegepast om bewegende beelden te tracken en het onderwerp nauwkeurig te benoemen. Dit prototype demonstreert effectieve real-time objectdetectie en tracking, met een sterke focus op de precisie van objectbenoeming. Bovendien is het vermogen van YoloV5 om mensen als objecten te scannen terwijl ze in beweging zijn een opvallende eigenschap, waardoor het project geschikt is voor uiteenlopende toepassingen waarbij het volgen van bewegende personen van essentieel belang is.",
       img: project2,
+      technologie: ["Python"],
     },
     {
       id: 3,
@@ -52,6 +75,7 @@ function App() {
       description:
         "IIn mijn recent ontwikkelde project, genaamd “New Era of Login,” heb ik een geavanceerde login-pagina gebouwd met Firebase Authentication en Storage. Deze moderne inlogfunctionaliteit biedt gebruikers de keuze om veilig in te loggen met hun e-mail en wachtwoord, of moeiteloos via hun Google-account. Hiermee creëer ik een flexibele en beveiligde gebruikerservaring in een nieuwe fase van inlogmethoden. Bovendien is de frontend van het project ontwikkeld met behulp van React, waardoor de gebruikersinterface responsief en dynamisch is.",
       img: project1,
+      technologie: ["Firebase", "React"],
     },
     {
       id: 4,
@@ -59,6 +83,7 @@ function App() {
       description:
         "In mijn recente project heb ik three.js gebruikt voor het renderen van 3D-modellen en een server opgezet met vue.js in combinatie met vanilla JavaScript. De kracht van three. js maakte het mogelijk gedetailleerde 3D-modellen vloeiend te renderen, terwijl de serverarchitectuur met vue.js een solide backend bood voor effectieve communicatie tussen de gebruikersinterface en de 3D-modellen",
       img: project3,
+      technologie: ["Three.js", "Vue.js"],
     },
   ];
   return (
@@ -103,7 +128,9 @@ function App() {
               Greetings and welcome! Your presence on my page, brings{" "}
               <mark> me joy as I share a glimpse of my world with you.</mark>
             </h2>
-            <button className="whiteButton">Contact</button>
+            <button onClick={openEmailClient} className="whiteButton">
+              Contact
+            </button>
           </div>
           <div className="footer">
             <h3>Trusted programming languages</h3>
@@ -134,7 +161,9 @@ function App() {
             </div>
           </div>
           <div className="asideButton">
-            <button className="blackButton">Contact</button>
+            <button onClick={openEmailClient} className="blackButton">
+              Contact
+            </button>
           </div>
         </div>
         <aside id="project">
@@ -148,6 +177,7 @@ function App() {
               >
                 <img alt={project.title} src={project.img}></img>
                 <h3>{project.title}</h3>
+                <p>Technologies: {project.technologie.join(", ")}</p>
               </div>
             ))}
           </div>
