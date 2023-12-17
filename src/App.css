@@ -137,6 +137,7 @@ nav a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
 .footer {
   text-align: center;
@@ -179,6 +180,7 @@ nav a {
   border: 1px solid #fff;
   background: #131313;
   color: white;
+  cursor: pointer;
 }
 .quote {
   display: flex;
@@ -201,6 +203,7 @@ nav a {
   align-items: center;
   justify-content: center;
   padding-top: 5%;
+  cursor: pointer;
 }
 .blackButton {
   color: #fff;
@@ -209,6 +212,7 @@ nav a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
 main {
   width: 80%;
@@ -285,5 +289,37 @@ aside {
     width: 162px;
     height: 44px;
     font-size: 12px;
+  }
+  .pfp div:nth-child(2),
+  .quote img {
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7vh;
+  }
+  .pfp {
+    grid-template-columns: 1fr;
+    margin-top: 5%;
+  }
+  .pfp div:nth-child(2) {
+    display: none;
+  }
+  .quote img {
+    display: none;
+  }
+  .navRight {
+    display: none;
+  }
+  nav {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .navLeft {
+    width: 100%;
   }
 }
